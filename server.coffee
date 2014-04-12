@@ -53,12 +53,15 @@ app.post '/api/segment/:id', (req, res) ->
         res.send(401, "Unauthorized")
         return
 
-    res.json(msg: "not yet implemented")
-
-
-
-
-
+    data = JSON.parse(fs.readFileSync "data.json")
+    id = req.params.id
+    if data[id]?
+        data[id].name = req.body.name
+        data[id].description = req.body.description
+        fs.writeFileSync "data.json", JSON.stringify(data)
+        res.json(success: true)
+    else
+        res.json(success: false)
 
 http.createServer(app).listen 3333, ->
   console.log 'Express server listening on port ' + 3333
