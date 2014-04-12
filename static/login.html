@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="app">
   <head>
-    <base href="/cms/">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width" initial-scale="1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title ng-bind-template="{{pageTitle}}"></title>
-    <link rel="stylesheet" href="css/app.css"><!--[if lte IE 7]>
+    <title>Log in to the BrainSlice CMS</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="app.css"><!--[if lte IE 7]>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/json2/20110223/json2.js"></script><![endif]--><!--[if lte IE 8]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
     <script>
@@ -17,13 +17,16 @@
         enabled: true
       };
     </script>
-    <script src="js/vendor.js"></script>
-    <script src="js/app.js"></script>
   </head>
-  <body ng-controller="AppCtrl">
+  <body>
     <div class="wrapper">
       <div class="container main-content">
-        <div ng-view></div>
+        <h1>Login to access the BrainSlice CMS</h1>
+        <form action="/login" method="post">
+            <input type="text" name="username" placeholder="Username"><br>
+            <input type="password" name="password" placeholder="Password">
+            <input type="submit" value="Log in">
+        </form>
       </div>
     </div>
   </body>
