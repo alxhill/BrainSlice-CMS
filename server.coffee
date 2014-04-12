@@ -44,5 +44,21 @@ app.get '/cms', (req, res, next) ->
     else
         res.redirect("/login")
 
+app.get '/api/all', (req, res) ->
+    data = JSON.parse(fs.readFileSync "data.json")
+    res.json(data)
+
+app.post '/api/segment/:id', (req, res) ->
+    unless req.user
+        res.send(401, "Unauthorized")
+        return
+
+    res.json(msg: "not yet implemented")
+
+
+
+
+
+
 http.createServer(app).listen 3333, ->
   console.log 'Express server listening on port ' + 3333
