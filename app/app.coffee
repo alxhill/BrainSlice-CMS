@@ -19,7 +19,6 @@ App.config([
 
   $routeProvider
     .when('/', templateUrl: 'partials/home.html')
-    .when('/cms', templateUrl: '/partials/cms.html')
 
     .otherwise({redirectTo: '/'})
 
