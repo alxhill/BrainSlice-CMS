@@ -17,3 +17,6 @@ test/test-results.xml
 
 # Bower stuff.
 bower_components/
+
+# don't track the actual data in the git repository
+data.json

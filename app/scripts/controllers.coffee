@@ -9,8 +9,8 @@ angular.module('app.controllers', [])
   '$location'
   '$http'
   '$rootScope'
-
-($scope, $location, $http, $rootScope) ->
+  '$timeout'
+($scope, $location, $http, $rootScope, $timeout) ->
     $rootScope.pageTitle = "BrainSlice CMS"
 
     $scope.form = {}
@@ -32,6 +32,9 @@ angular.module('app.controllers', [])
             console.log data
             if data.success
                 $scope.form.buttonText = "Saved!"
+                $timeout ->
+                    $scope.form.buttonText = "Save"
+                , 1000
             else
                 alert("There was an error saving your changes. Please refresh and try again.")
 ])

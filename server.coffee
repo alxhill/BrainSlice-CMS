@@ -45,8 +45,11 @@ app.get '/cms', (req, res, next) ->
         res.redirect("/login")
 
 app.get '/api/all', (req, res) ->
-    data = JSON.parse(fs.readFileSync "data.json")
-    res.json(data)
+    if fs.existsSync "data.json"
+        res.set "Content-Type", "application/json"
+        res.sendfile "data.json"
+    else
+        res.send error: "data not found"
 
 app.post '/api/segment/:id', (req, res) ->
     unless req.user
