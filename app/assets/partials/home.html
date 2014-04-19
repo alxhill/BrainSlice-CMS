@@ -15,6 +15,8 @@
                 <input type="text" ng-model="form.segment.name" class="form-control">
                 <label>Segment Description</label>
                 <textarea ng-model="form.segment.description" class="form-control"></textarea>
+                <label>Label position</label>
+                <input type="text" ng-model="form.segment.position" num-list class="form-control" placeholder="Enter a list of three comma-separated numbers">
             </div>
             <input type="submit" value="{{form.buttonText}}" class="btn btn-success">
         </form>

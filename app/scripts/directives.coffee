@@ -8,11 +8,18 @@ angular.module('app.directives', [
   'app.services'
 ])
 
-.directive('appVersion', [
-  'version'
+.directive 'numList', ->
+  require: 'ngModel'
+  link: (scope, elem, attr, ctrl) ->
 
-(version) ->
+    ctrl.$parsers.push (viewValue) ->
+      list = []
+      if viewValue?
+        for value in viewValue.split ","
+          if value?
+            list.push(+value) # converts the value into an integer
+      return list
 
-  (scope, elm, attrs) ->
-    elm.text(version)
-])
+    ctrl.$formatters.push (value) ->
+      if angular.isArray(value)
+        return value.join ', '

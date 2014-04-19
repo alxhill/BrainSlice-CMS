@@ -27,6 +27,13 @@ angular.module('app.controllers', [])
         $scope.form.buttonText = "Save"
 
     $scope.save = (id) ->
+        position = $scope.form.segment.position
+        if angular.isArray position
+            if position.length != 3
+                alert "position must have exactly 3 elements"
+                return
+        else
+            position = null
         $scope.segments[id] = angular.copy($scope.form.segment)
         $http.post("/api/segment/#{id}", $scope.segments[id]).success (data) ->
             console.log data
