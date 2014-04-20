@@ -61,6 +61,7 @@ app.post '/api/segment/:id', (req, res) ->
     if data[id]?
         data[id].name = req.body.name
         data[id].description = req.body.description
+        data[id].position = req.body.position
         fs.writeFileSync "data.json", JSON.stringify(data)
         res.json(success: true)
     else
