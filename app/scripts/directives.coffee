@@ -23,3 +23,14 @@ angular.module('app.directives', [
     ctrl.$formatters.push (value) ->
       if angular.isArray(value)
         return value.join ', '
+
+.directive 'sticky', ($window) ->
+  link: (scope, elem, attrs) ->
+    console.log(arguments)
+    elemPos = elem.offset().top
+    $($window).scroll ->
+      if elemPos < $window.scrollY
+        unless elem.hasClass("sticky-fixed")
+          elem.addClass("sticky-fixed")
+      else
+        elem.removeClass("sticky-fixed")
