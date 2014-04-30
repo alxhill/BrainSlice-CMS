@@ -28,13 +28,12 @@ angular.module('app.controllers', [])
 
     $scope.save = (id) ->
         segment = $scope.form.segment
-        position = segment.position
-        if angular.isArray position
-            if position.length != 3
+        if angular.isArray segment.position
+            if segment.position.length != 3
                 alert "position must have exactly 3 elements"
                 return
         else
-            position = null
+            segment.position = null
 
         segment.tasks ?= []
 
