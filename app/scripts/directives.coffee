@@ -17,7 +17,7 @@ angular.module('app.directives', [
       if viewValue?
         for value in viewValue.split ","
           if value?
-            list.push Number.parseFloat value.trim()
+            list.push parseFloat value.trim()
       return list
 
     ctrl.$formatters.push (value) ->
