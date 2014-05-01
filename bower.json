@@ -30,8 +30,5 @@
     "angular-mocks": {
       "main": "README.md"
     }
-  },
-  "resolutions": {
-    "jquery": "~2.0.3"
   }
 }

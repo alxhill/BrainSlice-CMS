@@ -1,0 +1,93 @@
+body {
+	margin: 0;
+	padding: 0;
+	background-color: #ebebf1;
+	font-family: Arial;
+}
+
+h1 {
+	font-size: 5vw;
+	font-weight: lighter;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+h2 {
+	font-size: 2vw;
+	color: #333;
+	font-weight: lighter;
+}
+
+header {
+	padding-top: 20px;
+	padding-bottom: 30px;
+	width: 100%;
+	background-color: #fff;
+}
+
+header div {
+	padding-left: 30px;
+	padding-right: 30px;
+}
+
+.wrapper {
+	margin-left: auto;
+	margin-right: auto;
+	width: 80%;
+	text-align: center;
+}
+
+.dualcolumn {
+	background:url('images/gradient.png');
+	background-repeat:no-repeat;
+	background-position:center bottom;
+	background-size: 100% auto;
+	padding-bottom: 50px;
+}
+
+.dualcolumn > div {
+	display: inline-block;
+}
+
+.dualcolumn > div:nth-child(1) {
+	float: left;
+	width: 45%;
+}
+
+.dualcolumn > div:nth-child(2) {
+	width: 54%;
+}
+
+.heading > div {
+	text-align: left;
+	float:right;
+	margin-right: 10%;
+	padding-left: 12%;
+}
+
+.heading img {
+	cursor: pointer;
+	width: 50%;
+}
+
+#nexus5 {
+	width: 75%;
+}
+
+.triplecolumn {background-color: white;min-height: 400px;}
+.triplecolumn > div:nth-child(1) {float:left;}
+.triplecolumn > div:nth-child(2) {float:left;}
+.triplecolumn > div {
+	width: 33%;
+	display: inline-block;
+	text-align: center;
+}
+
+.triplecolumn > div > h2 {font-weight: lighter}
+
+
+footer {
+	margin-top: 100px;
+	height: 100px;
+	background-color: white;
+}
