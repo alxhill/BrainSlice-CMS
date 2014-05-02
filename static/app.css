@@ -125,11 +125,12 @@ input[type=submit] {
 
 .nexus5bkimage {
 	width: 75%;
+	position: absolute;
+	left: 5.4vw;
 }
 
 #emptynexus5 {
 	width: 75%;
-	position: absolute;
 }
 
 .dualcolumn > div {

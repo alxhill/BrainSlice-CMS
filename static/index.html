@@ -39,23 +39,29 @@
     <script>
 
       function timeouts() {
-        setTimeout(function() {
-          $(".nexus5bkimage").attr("src","images/plain_brain.png");
-        },3000);
+        var count = 0;
+        var img = "";
 
-        setTimeout(function() {
-          $(".nexus5bkimage").attr("src","images/xray_color_brain.png");
-        },6000);
+        //every 5 seconds update to new image
+        setInterval(function() {
+          count++;
+          switch(count) {
+            case 0: img = "images/main_menu.png"; break;
+            case 1: img = "images/plain_brain.png"; break;
+            case 2: img = "images/xray_color_brain.png"; break;
+            case 3: img = "images/quiz_mode.png"; count = -1; break;
+          }
+          
+          $(".nexus5bkimage").attr("src", img);
+        
+        }, 5000);
 
-        setTimeout(function() {
-          $(".nexus5bkimage").attr("src","images/quiz_mode.png");
-        },9000);
       }
 
-      setInterval(function() {
-        $(".nexus5bkimage").attr("src","images/main_menu.png");
+      //call timeouts after 5 seconds
+      setTimeout(function() {
         timeouts();
-      }, 12000);
+      }, 5000);
     </script>
 
   </head>
@@ -94,9 +100,9 @@
             </div>
           </div>
           
-          <div style="position:relative">
-            <img id="emptynexus5" src="images/emptynexus5.png" />
+          <div style="position:relative; overflow:hidden">
             <img class="nexus5bkimage" src="images/main_menu.png" />
+            <img id="emptynexus5" src="images/emptynexus5.png" />
           </div>
 
         </div>
