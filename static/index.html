@@ -39,8 +39,9 @@
     <script>
 
       function timeouts() {
-        var count = 0;
+        var count = 1;
         var img = "";
+        var toggle = true;
 
         //every 5 seconds update to new image
         setInterval(function() {
@@ -51,8 +52,11 @@
             case 2: img = "images/xray_color_brain.png"; break;
             case 3: img = "images/quiz_mode.png"; count = -1; break;
           }
-          
-          $(".nexus5bkimage").attr("src", img);
+
+          $("#img"+ (!toggle+1)).fadeOut(500);
+          $("#img"+ (toggle+1)).fadeIn(500);
+
+          toggle = !toggle;
         
         }, 5000);
 
@@ -101,7 +105,8 @@
           </div>
           
           <div style="position:relative; overflow:hidden">
-            <img class="nexus5bkimage" src="images/main_menu.png" />
+            <img class="nexus5bkimage" id="img2" src="images/xray_color_brain.png" />
+            <img class="nexus5bkimage" id="img1" src="images/main_menu.png" />
             <img id="emptynexus5" src="images/emptynexus5.png" />
           </div>
 
