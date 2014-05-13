@@ -180,7 +180,18 @@ input[type=submit] {
 	text-align: center;
 }
 
-.triplecolumn > div > h2 {font-weight: lighter}
+.triplecolumn > div > h2 {font-weight: lighter;}
+
+.triplecolumn > div > ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+.triplecolumn > div > ul > li {
+	padding: none;
+	margin: 0;
+	line-height: 150%;
+}
 
 
 footer {
